@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running Python application...'
-                bat 'python main.py'      // For Windows
+                bat 'C:\\Users\\shash\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe main.py'      // For Windows
                 // sh 'python3 main.py'   // For Linux/Mac
             }
         }
