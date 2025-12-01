@@ -1,0 +1,29 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_stage:
+  stage: build
+  tags:
+    - windows
+  script:
+    - echo "Installing dependencies on Windows..."
+    - 'C:/Users/shash/AppData/Local/Programs/Python/Python313/python.exe' --version
+    - 'C:/Users/shash/AppData/Local/Programs/Python/Python313/python.exe' -m pip install -r requirements.txt
+
+test_stage:
+  stage: test
+  tags:
+    - windows
+  script:
+    - echo "Running tests..."
+    - 'C:/Users/shash/AppData/Local/Programs/Python/Python313/python.exe' main.py
+
+deploy_stage:
+  stage: deploy
+  tags:
+    - windows
+  script:
+    - echo "Deploying application..."
+    - echo "Deployment complete!"
